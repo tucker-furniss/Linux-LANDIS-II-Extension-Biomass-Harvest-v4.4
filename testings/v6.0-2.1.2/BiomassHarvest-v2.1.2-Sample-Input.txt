@@ -14,17 +14,10 @@ Prescription MaxAgeClearcut
     StandRanking 	MaxCohortAge
     SiteSelection 	Complete
     CohortsRemoved 	ClearCut
+	Plant poputrem
 
-Prescription    AspenClearcut
-    StandRanking    Economic
-    >> Species   Economic Rank  Minimum Age
-    >> -------   -------------  -----------
-       poputrem   100           40    
 
-    >>PresalvageYears 	10
-    MinimumAge      35
-    SiteSelection   CompleteStandSpread 40 50
-    CohortsRemoved  ClearCut
+
     
 Prescription SelectiveNorthernHardwood
     StandRanking    Economic
@@ -43,6 +36,8 @@ Prescription SelectiveNorthernHardwood
 	acersacc   1-40 (50%)  45-100 (5%) 105 (65%) 
 	betualle   1-400 (50%)
 	fraxamer   1-400 (50%)
+
+
 
 Prescription    OakPatchCutting
     StandRanking	MaxCohortAge
@@ -64,17 +59,28 @@ Prescription    OakPatchCutting
 	   querrubr  AllExceptOldest
 	   pinubank  All
 
+Prescription    AspenClearcut
+    StandRanking    Economic
+    >> Species   Economic Rank  Minimum Age
+    >> -------   -------------  -----------
+       poputrem   100           40    
+
+    >>PresalvageYears 	10
+    MinimumAge      35
+    SiteSelection   CompleteStandSpread 40 50
+    CohortsRemoved  ClearCut
+
+
 >>-----------------------------------------------------------------
 >> PRESCRIPTION IMPLEMENTATION 
 
     HarvestImplementations
 >>  Mgmt Area   Prescription    		Harvest Area    Begin Time  End Time
 >>  ---------   ------------    		------------    ----------  --------
-	1	MaxAgeClearcut			5%		30	    50
+	1	MaxAgeClearcut			5%		
 	1	AspenClearcut			5%
 	1	SelectiveNorthernHardwood	10%		0  	    50
->>	2	SelectiveNorthernHardwood	10%Stands	0  	    50
-	2	AspenClearcut			5%		0	    30
+>>	2	AspenClearcut			5%		0	    30
 	
 >>-----------------------------------------------------------------
 >> OUTPUTS

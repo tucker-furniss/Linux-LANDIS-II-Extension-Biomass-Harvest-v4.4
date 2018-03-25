@@ -1,6 +1,6 @@
 #define PackageName      "Biomass Harvest"
 #define PackageNameLong  "Biomass Harvest Extension"
-#define Version          "3.2.1"
+#define Version          "3.2.3"
 #define ReleaseType      "official"
 #define CoreVersion      "6.0"
 #define CoreReleaseAbbr  ""
@@ -16,6 +16,7 @@
 ; This .dll IS the extension (ie, the extension's assembly)
 ; NB. Do not put a version number in the file name of this .dll
 Source: ..\..\src\bin\Debug\Landis.Extension.BiomassHarvest.dll; DestDir: {#ExtDir}; Flags: replacesameversion 
+Source: ..\..\src\bin\Debug\Landis.Extension.BiomassHarvest.pdb; DestDir: {#ExtDir}; Flags: replacesameversion 
 
 ; Requisite auxiliary libraries
 ; NB. These libraries are used by other extensions and thus are never uninstalled.
