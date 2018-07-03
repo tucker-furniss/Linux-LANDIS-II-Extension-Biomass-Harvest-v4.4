@@ -2,7 +2,7 @@
 //   James Domingo, Green Code LLC
 //   Robert M. Scheller, Portland State University
 
-using Edu.Wisc.Forest.Flel.Util;
+using Landis.Utilities;
 using Landis.SpatialModeling;
 using Landis.Library.BiomassCohorts;
 using Landis.Library.BiomassHarvest;
