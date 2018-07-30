@@ -1,6 +1,6 @@
 // Contributors:
 //   James Domingo, Green Code LLC
-//   Robert M. Scheller, Portland State University
+//   Robert M. Scheller
 
 using Landis.Utilities;
 using Landis.SpatialModeling;

@@ -1,6 +1,6 @@
 // Contributors:
 //   James Domingo, Green Code LLC
-//   Robert M. Scheller, Portland State University
+//   Robert M. Scheller
  
 
 namespace Landis.Extension.BiomassHarvest
