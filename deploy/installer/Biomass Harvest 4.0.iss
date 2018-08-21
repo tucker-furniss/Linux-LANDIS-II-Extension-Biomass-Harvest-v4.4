@@ -1,6 +1,6 @@
 ; LANDIS-II Extension infomation
 #define CoreRelease "LANDIS-II-V7"
-#define ExtensionName "iomass Harvest"
+#define ExtensionName "Biomass Harvest"
 #define AppVersion "4.0"
 #define AppPublisher "LANDIS-II Foundation"
 #define AppURL "http://www.landis-ii.org/"
