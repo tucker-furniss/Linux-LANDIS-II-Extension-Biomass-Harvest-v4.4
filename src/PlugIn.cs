@@ -29,10 +29,7 @@ namespace Landis.Extension.BiomassHarvest
         private string nameTemplate;
         public static MetadataTable<EventsLog> eventLog;
         public static MetadataTable<SummaryLog> summaryLog;
-        //private StreamWriter log;
-        //private StreamWriter summaryLog;
         private static bool running;
-        //private static int event_id;
 
         int[] totalSites;
         int[] totalDamagedSites;
@@ -77,7 +74,8 @@ namespace Landis.Extension.BiomassHarvest
             // Add local event handler for cohorts death due to age-only
             // disturbances.
             // 2015-07-30 LCB: Disconnecting this event handler; Its tasks are performed by the SiteHarvestedEvent
-            //Cohort.AgeOnlyDeathEvent += CohortKilledByAgeOnlyDisturbance;
+            Cohort.AgeOnlyDeathEvent += CohortKilledByAgeOnlyDisturbance;
+            //Cohort.PartialMortality += CohortKilledByAgeOnlyDisturbance;
 
             HarvestMgmtLib.Main.InitializeLib(modelCore);
             HarvestExtensionMain.SiteHarvestedEvent += SiteHarvested;
@@ -265,8 +263,7 @@ namespace Landis.Extension.BiomassHarvest
         //---------------------------------------------------------------------
 
         // Event handler when a cohort is killed by an age-only disturbance.
-        public static void CohortKilledByAgeOnlyDisturbance(object sender,
-                                                            DeathEventArgs eventArgs)
+        public static void CohortKilledByAgeOnlyDisturbance(object sender, DeathEventArgs eventArgs)
         {
 
         //    // If this plug-in is not running, then some base disturbance
