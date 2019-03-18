@@ -1,12 +1,12 @@
 ; LANDIS-II Extension infomation
 #define CoreRelease "LANDIS-II-V7"
-#define ExtensionName "Biomass Harvest"
+#define ExtensionName "Biomass Harvest Biomass Rank"
 #define AppVersion "4.0"
 #define AppPublisher "LANDIS-II Foundation"
 #define AppURL "http://www.landis-ii.org/"
 
 ; Build directory
-#define BuildDir "..\..\src\bin\Release\netstandard2.0"
+#define BuildDir "..\..\src\bin\Debug\netstandard2.0"
 
 ; LANDIS-II installation directories
 #define ExtDir "C:\Program Files\LANDIS-II-v7\extensions"
@@ -18,7 +18,7 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{D3028456-B0EF-4CE4-9178-0E844AE9FBC7}
+AppId={{034A9B0A-D105-42EE-94F5-8D2439D530E9}
 AppName={#CoreRelease} {#ExtensionName}
 AppVersion={#AppVersion}
 ; Name in "Programs and Features"
@@ -45,8 +45,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 ; This .dll IS the extension (ie, the extension's assembly)
 ; NB: Do not put an additional version number in the file name of this .dll
 ; (The name of this .dll is defined in the extension's \src\*.csproj file)
-Source: {#BuildDir}\Landis.Extension.BiomassHarvest-v4.dll; DestDir: {#ExtDir}; Flags: replacesameversion
-Source: {#BuildDir}\Landis.Extension.BiomassHarvest-v4.pdb; DestDir: {#ExtDir}; Flags: replacesameversion
+Source: {#BuildDir}\Landis.Extension.BiomassHarvest-v4-BiomassRank.dll; DestDir: {#ExtDir}; Flags: replacesameversion
+Source: {#BuildDir}\Landis.Extension.BiomassHarvest-v4-BiomassRank.pdb; DestDir: {#ExtDir}; Flags: replacesameversion
 
 ; Requisite auxiliary libraries
 ; NB. These libraries are used by other extensions and thus are never uninstalled.
@@ -55,7 +55,7 @@ Source: {#BuildDir}\Landis.Library.BiomassCohorts-v3.dll; DestDir: {#ExtDir}; Fl
 Source: {#BuildDir}\Landis.Library.BiomassHarvest-v3.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Biomass-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Cohorts-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
-Source: {#BuildDir}\Landis.Library.HarvestManagement-v3.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
+Source: {#BuildDir}\Landis.Library.HarvestManagement-v3-Biomass.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Metadata-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.SiteHarvest-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Succession-v6.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
@@ -75,12 +75,12 @@ Source: {#InfoTxt}; DestDir: {#LandisPlugInDir}
 
 
 [Run]
-Filename: {#ExtensionsCmd}; Parameters: "remove ""Biomass Harvest"" "; WorkingDir: {#LandisPlugInDir}
+Filename: {#ExtensionsCmd}; Parameters: "remove ""Biomass Harvest Biomass Rank"" "; WorkingDir: {#LandisPlugInDir}
 Filename: {#ExtensionsCmd}; Parameters: "add ""{#InfoTxt}"" "; WorkingDir: {#LandisPlugInDir} 
 
 
 [UninstallRun]
 ; Remove "Age-Only Succession" from "extensions.xml" file.
-Filename: {#ExtensionsCmd}; Parameters: "remove ""Biomass Harvest"" "; WorkingDir: {#LandisPlugInDir}
+Filename: {#ExtensionsCmd}; Parameters: "remove ""Biomass Harvest Biomass Rank"" "; WorkingDir: {#LandisPlugInDir}
 
 

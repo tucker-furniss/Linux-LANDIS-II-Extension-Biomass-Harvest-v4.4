@@ -1,9 +1,9 @@
 LandisData   Extension
 
-Name         "Biomass Harvest"
+Name         "Biomass Harvest Biomass Rank"
 Version      "4.0"
 Type         disturbance:harvest
-Assembly     Landis.Extension.BiomassHarvest-v4
+Assembly     Landis.Extension.BiomassHarvest-v4-BiomassRank
 Class        Landis.Extension.BiomassHarvest.PlugIn
 Description  "Harvesting for biomass cohorts"
 CoreVersion  7.0

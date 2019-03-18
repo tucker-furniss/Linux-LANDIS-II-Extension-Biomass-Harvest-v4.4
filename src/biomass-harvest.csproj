@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Landis.Extension.BiomassHarvest</RootNamespace>
-    <AssemblyName>Landis.Extension.BiomassHarvest-v4</AssemblyName>
+    <AssemblyName>Landis.Extension.BiomassHarvest-v4-BiomassRank</AssemblyName>
     <AssemblyTitle>Landis.Extension.BiomassHarvest-v4</AssemblyTitle>
     <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
     <AssemblyProduct>Landis.Extension.BiomassHarvest-v4</AssemblyProduct>
@@ -45,8 +45,8 @@
     <Reference Include="Landis.Library.Cohorts-v2">
       <HintPath>lib\Landis.Library.Cohorts-v2.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Library.HarvestManagement-v3">
-      <HintPath>lib\Landis.Library.HarvestManagement-v3.dll</HintPath>
+    <Reference Include="Landis.Library.HarvestManagement-v3-Biomass">
+      <HintPath>lib\Landis.Library.HarvestManagement-v3-Biomass.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Library.Metadata-v2">
       <HintPath>lib\Landis.Library.Metadata-v2.dll</HintPath>
