@@ -56,6 +56,7 @@ Source: {#BuildDir}\Landis.Library.BiomassHarvest-v3.dll; DestDir: {#ExtDir}; Fl
 Source: {#BuildDir}\Landis.Library.Biomass-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Cohorts-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.HarvestManagement-v3-Biomass.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
+Source: {#BuildDir}\Landis.Library.HarvestManagement-v3-Biomass.pdb; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Metadata-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.SiteHarvest-v2.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
 Source: {#BuildDir}\Landis.Library.Succession-v6.dll; DestDir: {#ExtDir}; Flags: uninsneveruninstall replacesameversion
