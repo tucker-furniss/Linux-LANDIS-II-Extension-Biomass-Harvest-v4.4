@@ -7,7 +7,7 @@
     <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
     <AssemblyProduct>Landis.Extension.BiomassHarvest-v4</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>4.0</AssemblyVersion>
+    <AssemblyVersion>4.1</AssemblyVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest</RepositoryUrl>
@@ -18,7 +18,7 @@
     <Authors>Landis-II-Foundation</Authors>
     <Product>Landis.Extension.BiomassHarvest-v4</Product>
     <Copyright>Landis-II-Foundation</Copyright>
-    <Version>4.0</Version>
+    <Version>4.1</Version>
     <PackageTags>LANDIS-II;Landis;Extension;Biomass Harvest</PackageTags>
     <Description></Description>
     <PackageReleaseNotes></PackageReleaseNotes>
@@ -54,8 +54,8 @@
     <Reference Include="Landis.Library.SiteHarvest-v2">
       <HintPath>lib\Landis.Library.SiteHarvest-v2.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Library.Succession-v6">
-      <HintPath>lib\Landis.Library.Succession-v6.dll</HintPath>
+    <Reference Include="Landis.Library.Succession-v7">
+      <HintPath>lib\Landis.Library.Succession-v7.dll</HintPath>
     </Reference>
   </ItemGroup>
 
