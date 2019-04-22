@@ -18,8 +18,10 @@ Stands     		./biomass-harvest_Stand_s2e1.gis
 
 >>---- PRESCRIPTION_1 ---------------------------------------
 Prescription MinBiomassClearcut
-    StandRanking 	MinimumBiomass
-	MinimumBiomass	10000
+>>StandRanking MinimumBiomass
+    StandRanking 	Economic
+    	poputrem  	 100           40    
+    MinimumBiomass	5000
     SiteSelection 	Complete
     CohortsRemoved 	ClearCut
 
