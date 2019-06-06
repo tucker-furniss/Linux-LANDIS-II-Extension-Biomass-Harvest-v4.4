@@ -169,13 +169,16 @@ namespace Landis.Extension.BiomassHarvest
                 totalBiomassRemoved = new double[Prescription.Count];
 
                 mgmtArea.HarvestStands();
-                //and record each stand that's been harvested
+                //and record each stand that's been harvested in a non-repeat step
 
                 foreach (Stand stand in mgmtArea) {
                     //ModelCore.UI.WriteLine("   List of stands {0} ...", stand.MapCode);
-                    if (stand.Harvested)
+                    if (stand.Harvested && !stand.RepeatHarvested)
                         WriteLogEntry(mgmtArea, stand);
 
+                    // Do not double up on recording repeat harvested stands. This is now done from the harvest code
+                    else if (stand.RepeatHarvested)
+                        stand.SetRepeatHarvested();
                 }
 
                 // Prevent establishment:
@@ -204,7 +207,8 @@ namespace Landis.Extension.BiomassHarvest
 
                 foreach (AppliedPrescription aprescription in mgmtArea.Prescriptions)
                 {
-                    WriteSummaryLogEntry(mgmtArea, aprescription.Prescription);
+                    if (modelCore.CurrentTime <= aprescription.EndTime)
+                        WriteSummaryLogEntry(mgmtArea, aprescription);
                 }
             }
 
@@ -246,7 +250,8 @@ namespace Landis.Extension.BiomassHarvest
         public static void RepeatPrescriptionHarvested(object sender,
                                          RepeatHarvestPrescriptionFinishedEvent.Args eventArgs)
         {
-            WriteSummaryLogEntry(eventArgs.MgmtArea, eventArgs.Prescription, true);
+            WriteSummaryLogEntry(eventArgs.MgmtArea, eventArgs.Prescription, eventArgs.RepeatNumber,
+                eventArgs.LastHarvest);
         }
 
         //---------------------------------------------------------------------
@@ -307,7 +312,7 @@ namespace Landis.Extension.BiomassHarvest
 
         //---------------------------------------------------------------------
 
-        public static void WriteLogEntry(ManagementArea mgmtArea, Stand stand, int repeatNumber = 0)
+        public static void WriteLogEntry(ManagementArea mgmtArea, Stand stand, uint repeatNumber = 0)
         {
             int damagedSites = 0;
             int cohortsDamaged = 0;
@@ -415,39 +420,44 @@ namespace Landis.Extension.BiomassHarvest
             eventLog.WriteToFile();
         }
 
-        public static void WriteSummaryLogEntry(ManagementArea mgmtArea, Prescription prescription, bool isRepeat = false)
+        public static void WriteSummaryLogEntry(ManagementArea mgmtArea, AppliedPrescription prescription, uint repeatNumber = 0, bool lastHarvest = false)
         {
             double[] species_cohorts = new double[modelCore.Species.Count];
             double[] species_biomass = new double[modelCore.Species.Count];
             foreach (ISpecies species in modelCore.Species)
             {
-                species_cohorts[species.Index] = totalSpeciesCohorts[prescription.Number, species.Index];
-                species_biomass[species.Index] = totalSpeciesBiomass[prescription.Number, species.Index];
+                species_cohorts[species.Index] = totalSpeciesCohorts[prescription.Prescription.Number, species.Index];
+                species_biomass[species.Index] = totalSpeciesBiomass[prescription.Prescription.Number, species.Index];
             }
 
-            if (totalSites[prescription.Number] > 0 && prescriptionReported[prescription.Number] != true)
+            if (totalSites[prescription.Prescription.Number] > 0 && prescriptionReported[prescription.Prescription.Number] != true)
             {
-                string name = prescription.Name;
+                string name = prescription.Prescription.Name;
 
-                if (isRepeat)
+                if (repeatNumber > 0)
                 {
-                    name = name + "(" + prescription.RepeatNumber + ")";
+                    name = name + "(" + repeatNumber + ")";
                 }
                 summaryLog.Clear();
                 SummaryLog sl = new SummaryLog();
                 sl.Time = modelCore.CurrentTime;
                 sl.ManagementArea = mgmtArea.MapCode;
                 sl.Prescription = name;
-                sl.HarvestedSites = totalDamagedSites[prescription.Number];
-                sl.TotalBiomassHarvested = totalBiomassRemoved[prescription.Number];
-                sl.TotalCohortsPartialHarvest = totalCohortsDamaged[prescription.Number];
-                sl.TotalCohortsCompleteHarvest = totalCohortsKilled[prescription.Number];
+                sl.HarvestedSites = totalDamagedSites[prescription.Prescription.Number];
+                sl.TotalBiomassHarvested = totalBiomassRemoved[prescription.Prescription.Number];
+                sl.TotalCohortsPartialHarvest = totalCohortsDamaged[prescription.Prescription.Number];
+                sl.TotalCohortsCompleteHarvest = totalCohortsKilled[prescription.Prescription.Number];
                 sl.CohortsHarvested_ = species_cohorts;
                 sl.BiomassHarvestedMg_ = species_biomass;
                 summaryLog.AddObject(sl);
                 summaryLog.WriteToFile();
 
-                prescriptionReported[prescription.Number] = true;
+                // Do not mark this as recorded until the final summary is logged. Because repeat steps will be
+                // recorded first and then new initiations, mark this as reported once the initiation step is complete
+                if (repeatNumber == 0 || (ModelCore.CurrentTime > prescription.EndTime && lastHarvest))
+                {
+                    prescriptionReported[prescription.Prescription.Number] = true;
+                }
             }
         }
     }
