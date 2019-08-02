@@ -7,7 +7,7 @@
     <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
     <AssemblyProduct>Landis.Extension.BiomassHarvest-v4</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>4.1</AssemblyVersion>
+    <AssemblyVersion>4.2</AssemblyVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest</RepositoryUrl>
@@ -18,7 +18,7 @@
     <Authors>Landis-II-Foundation</Authors>
     <Product>Landis.Extension.BiomassHarvest-v4</Product>
     <Copyright>Landis-II-Foundation</Copyright>
-    <Version>4.1</Version>
+    <Version>4.2</Version>
     <PackageTags>LANDIS-II;Landis;Extension;Biomass Harvest</PackageTags>
     <Description></Description>
     <PackageReleaseNotes></PackageReleaseNotes>
@@ -45,8 +45,8 @@
     <Reference Include="Landis.Library.Cohorts-v2">
       <HintPath>lib\Landis.Library.Cohorts-v2.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Library.HarvestManagement-v3">
-      <HintPath>lib\Landis.Library.HarvestManagement-v3.dll</HintPath>
+    <Reference Include="Landis.Library.HarvestManagement-v4">
+      <HintPath>lib\Landis.Library.HarvestManagement-v4.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Library.Metadata-v2">
       <HintPath>lib\Landis.Library.Metadata-v2.dll</HintPath>
