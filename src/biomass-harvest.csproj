@@ -7,7 +7,7 @@
     <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
     <AssemblyProduct>Landis.Extension.BiomassHarvest-v4</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>4.2</AssemblyVersion>
+    <AssemblyVersion>4.3</AssemblyVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest</RepositoryUrl>
@@ -18,11 +18,11 @@
     <Authors>Landis-II-Foundation</Authors>
     <Product>Landis.Extension.BiomassHarvest-v4</Product>
     <Copyright>Landis-II-Foundation</Copyright>
-    <Version>4.2</Version>
+    <Version>4.3</Version>
     <PackageTags>LANDIS-II;Landis;Extension;Biomass Harvest</PackageTags>
     <Description></Description>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <FileVersion>7.0.0.0</FileVersion>
+    <FileVersion>4.3.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
