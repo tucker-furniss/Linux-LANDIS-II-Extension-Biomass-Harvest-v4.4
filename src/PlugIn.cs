@@ -458,6 +458,21 @@ namespace Landis.Extension.BiomassHarvest
                 {
                     prescriptionReported[prescription.Prescription.Number] = true;
                 }
+
+                // Clear the log for the initial harvests
+                if (lastHarvest)
+                {
+                    totalDamagedSites[prescription.Prescription.Number] = 0;
+                    totalBiomassRemoved[prescription.Prescription.Number] = 0;
+                    totalCohortsDamaged[prescription.Prescription.Number] = 0;
+                    totalCohortsKilled[prescription.Prescription.Number] = 0;
+
+                    foreach (ISpecies species in modelCore.Species)
+                    {
+                        totalSpeciesCohorts[prescription.Prescription.Number, species.Index] = 0;
+                        totalSpeciesBiomass[prescription.Prescription.Number, species.Index] = 0;
+                    }
+                }
             }
         }
     }
