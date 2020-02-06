@@ -268,14 +268,6 @@ namespace Landis.Extension.BiomassHarvest
         //    // If this plug-in is running, then the age-only disturbance must
         //    // be a cohort-selector from Base Harvest.
 
-            /* 2015-07-30 LCB
-             * Yes, this is double-counting. The Biomass is recorded when the SiteHarvested event fires
-             * Disconnecting event in the LoadParameters() method of this class
-             */
-
-            int reduction = eventArgs.Cohort.Biomass;  // Is this double-counting??
-            SiteVars.BiomassRemoved[eventArgs.Site] += reduction;
-
             //ModelCore.UI.WriteLine("Cohort Biomass removed={0:0.0}; Total Killed={1:0.0}.", reduction, SiteVars.BiomassRemoved[eventArgs.Site]);
             //Landis.Library.BiomassHarvest.SiteVars.CohortsPartiallyDamaged[eventArgs.Site]++;
         }
