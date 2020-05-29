@@ -4,10 +4,12 @@
     <RootNamespace>Landis.Extension.BiomassHarvest</RootNamespace>
     <AssemblyName>Landis.Extension.BiomassHarvest-v4-BiomassRank</AssemblyName>
     <AssemblyTitle>Landis.Extension.BiomassHarvest-v4</AssemblyTitle>
+    <AssemblyVersion>4.1</AssemblyVersion>
+    <Version>4.1</Version>
+    <FileVersion>4.1.0.0</FileVersion>
     <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
     <AssemblyProduct>Landis.Extension.BiomassHarvest-v4</AssemblyProduct>
     <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
-    <AssemblyVersion>4.0</AssemblyVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Biomass-Harvest</RepositoryUrl>
@@ -18,11 +20,9 @@
     <Authors>Landis-II-Foundation</Authors>
     <Product>Landis.Extension.BiomassHarvest-v4</Product>
     <Copyright>Landis-II-Foundation</Copyright>
-    <Version>4.0</Version>
     <PackageTags>LANDIS-II;Landis;Extension;Biomass Harvest</PackageTags>
     <Description></Description>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <FileVersion>7.0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -46,7 +46,7 @@
       <HintPath>lib\Landis.Library.Cohorts-v2.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Library.HarvestManagement-v4-Biomass">
-      <HintPath>lib\Landis.Library.HarvestManagement-v3-Biomass.dll</HintPath>
+      <HintPath>lib\Landis.Library.HarvestManagement-v4-Biomass.dll</HintPath>
     </Reference>
     <Reference Include="Landis.Library.Metadata-v2">
       <HintPath>lib\Landis.Library.Metadata-v2.dll</HintPath>
