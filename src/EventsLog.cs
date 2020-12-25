@@ -12,7 +12,7 @@ namespace Landis.Extension.BiomassHarvest
     {
 
         [DataFieldAttribute(Unit = FieldUnits.Year, Desc = "Harvest Year")]
-        public int Time {set; get;}
+        public int Time { set; get; }
 
         [DataFieldAttribute(Desc = "Management Area")]
         public uint ManagementArea { set; get; }
@@ -38,10 +38,10 @@ namespace Landis.Extension.BiomassHarvest
         [DataFieldAttribute(Unit = FieldUnits.Count, Desc = "Number of Sites Harvested")]
         public int HarvestedSites { set; get; }
 
-        [DataFieldAttribute(Unit = FieldUnits.Mg_ha, Desc = "Biomass Removed (Mg)", Format = "0.00")]
+        [DataFieldAttribute(Unit = FieldUnits.Mg_ha, Desc = "Biomass Removed (Mg)", Format = "0.0000")]
         public double MgBiomassRemoved { set; get; }
 
-        [DataFieldAttribute(Unit = FieldUnits.Mg_ha, Desc = "Biomass Removed (Mg) per damaged hectare", Format = "0.00")]
+        [DataFieldAttribute(Unit = FieldUnits.Mg_ha, Desc = "Biomass Removed (Mg) per damaged hectare", Format = "0.0000")]
         public double MgBioRemovedPerDamagedHa { set; get; }
 
         [DataFieldAttribute(Unit = FieldUnits.Count, Desc = "Number of Cohorts Partially Harvested")]
@@ -55,8 +55,5 @@ namespace Landis.Extension.BiomassHarvest
 
         [DataFieldAttribute(Unit = FieldUnits.None, Desc = "Biomass Harvested by Species (Mg)", SppList = true)]
         public double[] BiomassHarvestedMg_ { set; get; }
-
-
- 
     }
 }
