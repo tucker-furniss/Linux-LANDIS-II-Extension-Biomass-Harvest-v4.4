@@ -1,7 +1,7 @@
 LandisData   Extension
 
 Name         "Biomass Harvest"
-Version      "4.3"
+Version      "4.4"
 Type         disturbance:harvest
 Assembly     Landis.Extension.BiomassHarvest-v4
 Class        Landis.Extension.BiomassHarvest.PlugIn
